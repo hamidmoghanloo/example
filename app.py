@@ -11,7 +11,9 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-MODEL_ID = os.getenv("MODEL_ID", "sshleifer/tiny-gpt2")
+# Qwen/Qwen3-4B
+# MODEL_ID = os.getenv("MODEL_ID", "sshleifer/tiny-gpt2")
+MODEL_ID = os.getenv("MODEL_ID", "Qwen/Qwen3-4B")
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 tokenizer = None
 model = None
