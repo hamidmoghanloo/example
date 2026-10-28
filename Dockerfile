@@ -1,4 +1,4 @@
-FROM docker.arvancloud.ir/pytorch/pytorch:2.6.0-cuda12.1-cudnn8-runtime
+FROM docker.arvancloud.ir/pytorch/pytorch:2.3.1-cuda12.1-cudnn8-runtime
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -9,7 +9,7 @@ WORKDIR /app
 COPY requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt \
-    && python -c "import torch; print('PyTorch:', torch.__version__); assert torch.__version__.startswith('2.6.0'), 'Expected PyTorch 2.6.0 from base image'"
+    && python -c "import torch; print('PyTorch:', torch.__version__); assert torch.__version__.startswith('2.3.1'), 'Expected PyTorch 2.3.1 from base image'"
 
 COPY app.py ./
 
